@@ -1,10 +1,26 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import * as nakamajs from "@heroiclabs/nakama-js/dist/nakama-js.umd";
 
  class Controls extends Component {
 
   render() {
+    var client = new nakamajs.Client("defaultkey", "127.0.0.1", 7350);
+    console.log(client);
+    client.ssl = false;
+    const email = "hello@example.com";
+    const password = "somesupersecretpassword";
+    const session = "null";
+    client.authenticateEmail({
+      email: email,
+      password: password
+    }).then((response) => {
+      console.log(response);
+    });
+    // Store session for quick reconnects.
+    localStorage.nakamaAuthToken = session.token;
+    console.info("Authenticated successfully. User id:", session.user_id);
     const { resetLabel, incrementLabel, decrementLabel, increment, decrement, resetCount } = this.props;
 
     return (
