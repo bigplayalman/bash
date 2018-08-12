@@ -1,15 +1,12 @@
-version: '2'
+version: "2"
 services:
   db:
     image: rethinkdb:latest
     ports:
       - "38080:8080"
   web:
-    image: markwatsonatx/node-alpine:latest
-    volumes:
-      - ./public/
-    working_dir: /usr/src/app
+    image: canopytax/staticserver
     ports:
-      - "33000:3000"
-    depends_on:
-      - db
+      - "8000:8000"
+    volumes:
+      - ./public/:/www/
