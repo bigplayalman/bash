@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
 
-import nakama from "./nakama";
+import rethink from "./rethink";
 
-export default combineReducers({ nakama });
+export default combineReducers({ rethink });

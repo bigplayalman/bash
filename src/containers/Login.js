@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { login } from "../actions/nakamaActions";
+import { login } from "../actions/rethinkActions";
 
 export class Login extends Component {
   static get propTypes() {

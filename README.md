@@ -1,6 +1,6 @@
 ![logos](https://image.ibb.co/m8S9ew/react_redux_sass.jpg)
 
-# Nakama Docker
+# rethinkdb Docker
 
 docker-compose up -d for backend/database
 
